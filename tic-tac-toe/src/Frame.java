@@ -4,19 +4,19 @@ import java.awt.event.*;
 
 class Frame extends JFrame
 {	
-	String[] str = new String[9];
-	boolean b[] = new boolean[9];
-	JLabel[] lab = new JLabel[5];
+	String[] str = new String[9]; // массив текстовых значений на кнопках
+	boolean b[] = new boolean[9]; // массив логической переменно наличия текста на кнопках
+	JLabel[] lab = new JLabel[5]; // массив JLabel
 	int[] list = new int[4];
-	int k = 0, k1 = 0, kAI = 0, kx = 0, ko = 0;
-	Timer win, AI;
+	int k = 0, k1 = 0, kAI = 0, kx = 0, ko = 0; // счетчики хода, хода1, нажатия на кнопку активации ИИ, побед Х, побед О
+	Timer win, AI; // таймеры проверки условия победы, хода ИИ
 	Font btnF = new Font("arial", 1, 50), LabelF = new Font("arial", 1, 20), aiF = new Font("times new roman", 1, 15);
 	
 	public Frame(String title)
 	{
 		//----------------------------------------------------------------------------------------// параметры окна
 		setTitle(title);
-		setSize(436, 359); // èçíà÷àëüíûé X = 186
+		setSize(436, 359);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
@@ -69,7 +69,7 @@ class Frame extends JFrame
 		//----------------------------------------------------------------------------------------//
 		
 		//----------------------------------------------------------------------------------------// ActionListener для кнопок
-		res.addActionListener(new ActionListener() // унопка очистки поля и сброса всех счетчиков
+		res.addActionListener(new ActionListener() // кнопка очистки поля и сброса всех счетчиков
 				{
 			public void actionPerformed(ActionEvent e)
 			{
@@ -340,7 +340,7 @@ class Frame extends JFrame
 			{
 				if (k - k1 == 1) // для того чтобы ИИ ставил О только в свой ход, добавляется данное условие
 				{
-				// проверяются 8 критических условийдля постановки О ИИ
+				// проверяются 8 критических условийдля постановки О для ИИ
 				// сначала проверяются условия для поставноки О, а потом для Х
 					//-----------------------------------------------------// 1o
 					if (str[0] == str[1] & b[0] == true & b[2] == false & str[0] == "O")
