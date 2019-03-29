@@ -7,21 +7,21 @@ public class Starter
 	
 	public static void main(String[] args)
 	{
-		Queue<Cat> q = new Queue<Cat>(); // создание очереди
+		Queue<Cat> q = new Queue<Cat>(); // СЃРѕР·РґР°РµРј РѕС‡РµСЂРµРґСЊ
 		JFrame frame = new JFrame();
 		
-		Timer tm = new Timer(500, new ActionListener() // таймер на увеличение очереди и ее очистки
+		Timer tm = new Timer(500, new ActionListener() // С‚Р°Р№РјРµСЂ РґР»СЏ Р·Р°РїРѕР»РЅРµРЅРёСЏ РѕС‡РµСЂРµРґРё
 				{
 			public void actionPerformed(ActionEvent e)
 			{
-				k ++; // плючуем счетчик очереди
-				String name = Integer.toString(k); // создаем объект для очереди
+				k ++; // СЃС‡РµС‚С‡РёРє РґР»РёРЅС‹ РѕС‡РµСЂРµРґРё
+				String name = Integer.toString(k);
 				System.out.print(k + " ");
 				
 				Cat cat = new Cat(name);
 				q.add(cat);
 				
-				if (k % 3 == 0) // если очередь переполняется, то удалаяем первого человека
+				if (k % 3 == 0) // РµСЃР»Рё РѕС‡РµСЂРµРґСЊ РїРµСЂРµРїРѕР»РЅСЏРµС‚СЃСЏ, СЂРµРјСѓРІРёРј РїРµСЂРІРѕРіРѕ
 				{
 					System.out.println();
 					q.get(0); System.out.println(" was removed");
